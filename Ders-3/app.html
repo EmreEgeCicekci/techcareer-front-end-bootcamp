@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script src="app.js"></script>
+    
+    <!--            Exercise 2              -->
+
+    <style>
+        .create-element #append-child{
+            background-color: rgb(236, 192, 135);
+            line-height: 25px;
+            margin-bottom: 8px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .create-element #prepend-child{
+            background-color: palevioletred;
+            line-height: 25px;
+            margin-bottom: 8px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 20px;
+            
+        }
+    </style>
+
+    <div class="create-element">
+        <div id="append-child">
+            <p>appendChild ebeveyn öğenin içinde en sona ekler.</p>
+        </div>
+
+        <div id="prepend-child">
+            <p>Bu prependChild örneğidir.</p>
+            <p>Prepend-Child ebeveyn öğenin içinde en başa ekler.</p>
+        </div>
+    </div>
+    
+    <script>
+        let divAppend = document.getElementById('append-child');
+        let pElement = document.createElement('p');
+        pElement.textContent = 'Bu bir appendChild örneğidir.';
+        divAppend.appendChild(pElement);
+    </script>
+
+    <script>
+        let divPrepend = document.getElementById('prepend-child');
+        let hElement = document.createElement('h1');
+        hElement.textContent = 'Bu Prepend-Child Başlığı';
+        //divPrepend.prepend(hElement); 
+        divPrepend.insertBefore(hElement, divPrepend.firstChild);
+    </script>
+
+</body>
+</html>
